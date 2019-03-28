@@ -1,0 +1,89 @@
+html,
+body {
+  font-family: "roboto";
+}
+
+.p-pageWrapper,
+.p-nav {
+  background-color: white !important;
+}
+
+.p-nav a {
+  color: #0c4c6e !important;
+}
+
+.p-nav a:hover {
+  color: #a5cae4 !important;
+}
+
+.block.block--category,
+.structItem.structItem--thread, .BRMSContainer {
+  background-color: white !important;
+  border-radius: 3px;
+  box-shadow: 1px 1px 12px rgba(170, 170, 170, 0.38);
+}
+
+.BRMSContainer {
+  font-family: "roboto";
+}
+
+.block.block--category,
+.structItem.structItem--thread {
+  margin-bottom: 50px;
+}
+
+.block-header,
+.BRMSContainer.brmsTopTabs .brmsStatisticHeader {
+  background-color: white !important;
+  color: #0c4c6e !important;
+}
+
+.block-body {
+  padding: 10px !important;
+}
+
+.samBannerUnit a {
+  width: 100%;
+}
+
+.samBannerUnit img {
+  margin: auto;
+  display: block;
+}
+
+.nodeContentBefore,
+.nodeContentAfter {
+  background-color: white !important;
+  border: 1px solid rgba(128, 128, 128, 0.22);
+}
+
+.nodeContentBefore:hover,
+.nodeContentAfter:hover {
+  border: 1px solid #a5cae4;
+}
+
+.nodeContentAfter .node-extra-row.lastPostTitle {
+  text-align: left !important;
+}
+
+.nodeContentAfter .node-extra-row ul li,
+.nodeContentAfter .node-extra-row ul li .username,
+.node-description,
+.structItemContainer .structItem time,
+.structItem-minor,
+.structItem-cell--view span,
+.structItem-cell--reply span {
+  color: #939393 !important;
+}
+
+.structItemContainer .structItemContainer-group--sticky .structItem {
+  background-color: white !important;
+  border: 1px solid #e87d7d !important;
+}
+
+.structItemContainer .structItem .structItem-cell--icon .structItem-iconContainer .avatar:first-child,
+body[data-template=forum_view] .structItem-cell--avartar .avatar {
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=inject.css.map */
