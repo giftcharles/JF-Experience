@@ -1,17 +1,14 @@
 $primary:#0c4c6e;
 $secondary:#a5cae4;
 $font : 'roboto';
-$phaseOuttColor: #939393;
+$phaseOutColor: #939393;
 $warningAccent : rgb(232,125,125);
+$boxShadow : 1px 1px 12px rgba(170,170,170,0.38);
+$themeColor : white;
 
 html,
 body {
     font-family: $font;
-}
-
-.p-pageWrapper,
-.p-nav {
-    background-color: white !important;
 }
 
 .p-nav a {
@@ -23,9 +20,9 @@ body {
 }
 
 %card {
-    background-color: white !important;
+    background-color: $themeColor !important;
     border-radius: 3px;
-    box-shadow: 1px 1px 12px rgba(170,170,170,0.38);
+    box-shadow: $boxShadow
 }
 
 .BRMSContainer {
@@ -37,13 +34,18 @@ body {
 .block.block--category,
 .structItem.structItem--thread{
     @extend %card;
-    margin-bottom: 50px
+    margin-bottom: 12px
 }
 
 .block-header,
-.BRMSContainer.brmsTopTabs .brmsStatisticHeader{
-    background-color: white !important;
+.BRMSContainer.brmsTopTabs .brmsStatisticHeader,
+.overlay-title{
+    background-color: $themeColor !important;
     color: $primary !important;
+}
+
+.BRMSContainer.brmsTopTabs .brmsStatisticHeader {
+    border-bottom: none !important;
 }
 
 .block-body {
@@ -60,8 +62,10 @@ body {
 }
 
 .nodeContentBefore,
-.nodeContentAfter{
-    background-color: white !important;
+.nodeContentAfter,
+.block-minorHeader,
+.block-body {
+    background-color: $themeColor !important;
     border: 1px solid rgba(128,128,128,0.22);
 }
 
@@ -81,15 +85,177 @@ body {
 .structItem-minor,
 .structItem-cell--view span,
 .structItem-cell--reply span {
-    color: $phaseOuttColor !important;
+    color: $phaseOutColor !important;
+}
+
+body[data-template="whats_new"] .structItemContainer > .structItem,
+body[data-template="whats_new_posts"] .structItemContainer > .structItem,
+body[data-template="news_feed"] .structItemContainer > .structItem,
+body[data-template="latest_activity"] .structItemContainer > .structItem {
+    margin-bottom: 5px !important;
 }
 
 .structItemContainer .structItemContainer-group--sticky .structItem {
-    background-color: white !important;
+    background-color: $themeColor !important;
     border: 1px solid $warningAccent !important;
 }
 
-.structItemContainer .structItem .structItem-cell--icon .structItem-iconContainer .avatar:first-child,
-body[data-template=forum_view] .structItem-cell--avartar .avatar{
-    border-radius: 50%;
+.avatar {
+    border-radius: 50% !important;
+}
+
+
+.block-footer {
+    background-color: $themeColor !important;
+    margin-top: 12px;
+    border-top: none !important;
+    box-shadow: $boxShadow
+
+}
+
+span.username::before {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+}
+
+.p-body-sidebar .block-body {
+    padding: 0px !important;
+}
+
+.p-body-sidebar .block-body {
+    padding: 0px !important;
+}
+
+div .samCodeUnit[data-position="container_content_above"],
+.p-body-inner .p-body-header,
+.p-body-sidebar.p-have--sidebar .samCodeUnit,
+.samCodeUnit, .samBannerUnit {
+    display: none;
+}
+
+
+.p-breadcrumbs,
+.p-discovery.searchinline .search-area form .search-input,
+#footer .p-footer-inner .footer-custom,
+#footer .footer-bottom .footerBottomContent{
+    background-color: transparent !important;
+}
+
+.brv-breadcrumbs-inner,
+.block-filterBar,
+.p-body .p-body-inner .p-body-main .p-body-content .block-outer,
+.title-thread,
+.structItemContainer>.structItem:first-child {
+    background-color: $themeColor !important;
+    border: 1px solid rgb(217,217,217) !important;
+    border-radius: 3px
+}
+
+
+.p-breadcrumbs li:first-child a {
+    color: $primary;
+    background-color: transparent;
+    padding: 3px 12px !important;
+    border-radius: 6px;
+    margin-top: 3px;
+    border: 1px solid $phaseOutColor;
+}
+
+.p-breadcrumbs li:first-child a:hover{
+    color: white;
+    background-color: $primary    
+}
+
+.block-body.member-content .listInline--comma .username {
+    background-color: $primary;
+    color: white;
+    padding: 3px 8px;
+    font-size: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 3px
+}
+
+.listInline.listInline--comma>li:after {
+    content: ' ' !important;
+}
+
+.p-body .p-body-inner .p-have--sidebar .block.member-visitor,
+.p-body .p-body-inner .p-have--sidebar .block .block-container .block-body {
+    @extend %card;
+}
+
+.p-body .p-body-inner .p-have--sidebar .block.member-visitor .content-inner .contentRow-main,
+.p-discovery.searchinline, .menu-header,
+.fr-box.fr-basic .fr-wrapper,
+.tooltip--member .tooltip-content,
+.p-pageWrapper,
+.p-nav{
+    background-color: $themeColor !important;
+}
+
+.p-discovery.searchinline input,
+.filterBar-menuTrigger,
+.menu-header,
+.search-input input::placeholder{
+    color: $primary !important
+}
+
+.p-body .p-body-inner .p-have--sidebar .block.member-visitor .content-inner .contentRow-main .contentRow-minor,
+.p-body .p-body-inner .p-have--sidebar .block.member-visitor .content-inner .contentRow-main .contentRow-minor dl dt,
+.title-thread .item-title{
+    color: $primary !important;
+}
+
+.stickLogo,
+.notStickLogo,
+.controlSearch img{
+    filter: invert(100%);
+}
+
+.menu-content {
+    border-radius: 5px !important
+}
+
+.menu {
+    box-shadow: $boxShadow;
+}
+
+.menu-linkRow[data-nav-id]:hover {
+    background-color: $secondary !important;
+    transition: .25s easee-in-out;
+    color: black !important;
+}
+
+.has-touchevents .avatar-update, .avatar:hover .avatar-update {
+    bottom: 18px !important;
+}
+
+.avatar-update {
+    background: none !important;
+}
+
+.button {
+    background-color: $themeColor !important;
+    color: $primary !important;
+    border-radius: 6px !important;
+}
+
+.button.button--primary {
+    border: 1px solid $phaseOutColor !important;
+}
+
+.fr-box {
+    border: 1px solid $phaseOutColor;
+    border-radius: 3px;
+}
+
+.p-body .p-body-inner .p-have--sidebar .block .block-container .block-body {
+    padding: 10px !important;
+}
+
+.menu--structural.menu--account .menu-content .menu-row--highlighted {
+    background-image: url(https://www.jamiiforums.com/styles/brivium/jamii/extra/bg-visitor-avatar.png);
+    background-size: cover;
 }
