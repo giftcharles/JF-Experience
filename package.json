@@ -1,19 +1,28 @@
 {
-  "name": "jf-experience",
+  "name": "browseraction",
   "version": "0.0.1",
-  "description": "The best way to expirience JamiiForums and added functionality for a better user expirience.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build && npm run mvfiles",
+    "lint": "vue-cli-service lint",
+    "mvfiles": "python moveAssets.py"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/giftcharles/JF-Experience.git"
+  "dependencies": {
+    "reset-css": "^4.0.1",
+    "vue": "^2.6.6",
+    "vue-material": "^1.0.0-beta-10.2",
+    "vuex": "^3.0.1"
   },
-  "author": "Gift Charles",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/giftcharles/JF-Experience/issues"
-  },
-  "homepage": "https://github.com/giftcharles/JF-Experience#readme"
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.5.21"
+  }
 }
