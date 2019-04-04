@@ -14,7 +14,7 @@
     "scripts": [
       "src/bg/background.js"
     ],
-    "persistent": false
+    "persistent": true
   },
   "options_page": "src/options_custom/index.html",
   "browser_action": {
@@ -24,25 +24,20 @@
   },
   "permissions": [
     "https://www.jamiiforums.com/*",
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "content_scripts": [
     {
       "matches": [
         "https://www.jamiiforums.com/*"
       ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://www.jamiiforums.com/*"
-      ],
       "js": [
-        "src/inject/inject.js",
-        "js/jquery/jquery.js"
-      ]
+        "js/jquery/jquery.js",
+        "src/inject/themes.js",
+        "src/inject/inject.js"
+      ],
+      "run_at": "document_start"
     }
   ]
 }

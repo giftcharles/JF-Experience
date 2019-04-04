@@ -1,4 +1,13 @@
-html,
+console.log('loading at the top of the doc as per usual');
+/*
+var link = document.createElement("link");
+link.href =  chrome.runtime.getURL('src/inject/inject.css');
+console.log(link.href)
+link.type = "text/css";
+link.rel = "stylesheet";
+document.documentElement.insertBefore(link, document.firstChild.firstChild);
+*/
+const LightTheme = `html,
 body {
   font-family: "roboto";
 }
@@ -273,3 +282,69 @@ div .samCodeUnit[data-position=container_content_above],
 }
 
 /*# sourceMappingURL=inject.css.map */
+
+`;
+
+const defaultTheme = `
+
+`;
+
+const DarkTheme = `
+.p-pageWrapper,
+.p-navSticky .p-nav {
+  background-color: red !important;
+}
+`;
+
+
+function ChangeTheme(){
+  chrome.storage.sync.get({ThemeChoiceName: 'default'}, function(data) {
+      chrome.storage.sync.set({ThemeChoiceName: data.ThemeChoiceName}, function() {
+        
+      });
+      switch_the_theme_based_on_storage_index(data.ThemeChoiceName);
+  });
+}
+
+ChangeTheme();
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.ChangeThemeLive == "Now"){
+      ChangeTheme();
+      sendResponse({message: "the theme has been updated live"});
+    }
+});
+
+function switch_the_theme_based_on_storage_index(theName){
+
+  try{
+    document.getElementById("jfe-themeCss").remove();
+  }catch{
+    console.log('custom jfe-theme css is not loaded yet')
+  }
+  var customStyles = document.createElement('style');
+
+  customStyles.id = "jfe-themeCss"
+
+  switch(theName){
+    case 'default':
+        customStyles.appendChild(document.createTextNode(defaultTheme));
+        break;
+
+    case 'light':
+        customStyles.appendChild(document.createTextNode(LightTheme));
+        break;
+
+    case 'dark':
+        customStyles.appendChild(document.createTextNode(DarkTheme));
+        break;
+
+      
+  }
+
+  document.documentElement.insertBefore(customStyles, document.firstChild.firstChild);
+
+}
+
+

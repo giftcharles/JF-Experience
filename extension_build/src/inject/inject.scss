@@ -11,8 +11,6 @@ body {
     font-family: $font;
 }
 
-
-
 .p-nav a {
     color: $primary !important;
 }
@@ -282,13 +280,13 @@ div .samCodeUnit[data-position="container_content_above"],
 }
 
 #footer .p-footer-inner .footer-custom .row .footer-column .footer-title {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 #footer .footer-bottom {
-    background-color: #f7f7f7;
+    background-color: #f7f7f7 !important;
 }
 
 #footer .p-footer-inner .footer-custom .row .footer-column .content-inner {
-    padding: 7px 10px 30px;
+    padding: 7px 10px 30px !important;
 }
