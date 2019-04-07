@@ -190,8 +190,15 @@ div .samCodeUnit[data-position="container_content_above"],
 .p-discovery.searchinline, .menu-header,
 .fr-box.fr-basic .fr-wrapper,
 .tooltip--member .tooltip-content,
-.p-navSticky.is-sticky .p-nav{
+.p-navSticky.is-sticky .p-nav,
+body[data-template=conversation_view] .brvMessageUser, body[data-template=thread_view] .brvMessageUser,
+body[data-template=thread_view] .message-content,
+body[data-template=conversation_view] .message-footer, body[data-template=thread_view] .message-footer{
     background-color: $themeColor !important;
+}
+
+body[data-template=conversation_view] .message-footer, body[data-template=thread_view] .message-footer {
+    border-top: 1px solid #eff4f7;
 }
 
 .p-pageWrapper,
@@ -240,7 +247,8 @@ div .samCodeUnit[data-position="container_content_above"],
     bottom: 18px !important;
 }
 
-.avatar-update {
+.avatar-update,
+[data-template=thread_view] .p-body-content .block-body {
     background: none !important;
 }
 
@@ -259,6 +267,17 @@ div .samCodeUnit[data-position="container_content_above"],
     border-radius: 3px;
 }
 
+.block--messages .message {
+    padding-top: 0;
+    margin-top: 20px !important;
+}
+
+body[data-template=thread_view] article.message{
+    border-top: 1px solid rgb(192,192,192) !important;
+    border-bottom: 1px solid rgb(192,192,192) !important;
+    border-radius: 25% !important;
+}
+
 .p-body .p-body-inner .p-have--sidebar .block .block-container .block-body {
     padding: 10px !important;
 }
@@ -267,7 +286,6 @@ div .samCodeUnit[data-position="container_content_above"],
     background-image: url(https://www.jamiiforums.com/styles/brivium/jamii/extra/bg-visitor-avatar.png);
     background-size: cover;
 }
-
 
 #footer {
     background-color: white;
@@ -280,13 +298,16 @@ div .samCodeUnit[data-position="container_content_above"],
 }
 
 #footer .p-footer-inner .footer-custom .row .footer-column .footer-title {
-    border-bottom: none !important;
+    border-bottom: none;
 }
 
 #footer .footer-bottom {
-    background-color: #f7f7f7 !important;
+    background-color: #f7f7f7;
 }
 
 #footer .p-footer-inner .footer-custom .row .footer-column .content-inner {
-    padding: 7px 10px 30px !important;
+    padding: 7px 10px 30px;
 }
+
+
+

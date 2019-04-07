@@ -34,10 +34,17 @@
       ],
       "js": [
         "js/jquery/jquery.js",
-        "src/inject/themes.js",
-        "src/inject/inject.js"
+        "src/inject/themes.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.jamiiforums.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
     }
   ]
 }
