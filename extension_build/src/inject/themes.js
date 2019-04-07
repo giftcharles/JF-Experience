@@ -1,13 +1,3 @@
-console.log('loading at the top of the doc as per usual');
-/*
-var link = document.createElement("link");
-link.href =  chrome.runtime.getURL('src/inject/inject.css');
-console.log(link.href)
-link.type = "text/css";
-link.rel = "stylesheet";
-document.documentElement.insertBefore(link, document.firstChild.firstChild);
-*/
-
 const BaseTheme = `
 .tooltip {
   display: none !important;
